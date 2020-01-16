@@ -27,7 +27,7 @@ spec:
   ) {
     node(label) {
         stage('Checkout Workspace') {
-           git url: 'https://github.hpe.com/hardik-dhi-parekh/hello-world-stage-deploy', branch: env.BRANCH_NAME
+           git url: 'https://github.com/Test-Org-1234567/hello-world-stage-deploy', branch: env.BRANCH_NAME
         }
         stage('YAML lint') {
           container('ubuntu') {
