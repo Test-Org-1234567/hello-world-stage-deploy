@@ -19,6 +19,10 @@ spec:
       value: http://proxy.ftc5.hpelabs.net:8080
     - name: https_proxy
       value: http://proxy.ftc5.hpelabs.net:8080
+    - name: HTTP_PROXY
+      value: http://proxy.ftc5.hpelabs.net:8080
+    - name: http_proxy
+      value: http://proxy.ftc5.hpelabs.net:8080
     - name: NO_PROXY
       value: localhost,127.0.0.1,trial1-glhc-cp-gw-0.glhc-hpe.local
     - name: no_proxy
