@@ -49,19 +49,20 @@ spec:
               sh "apt-get install -y curl"
               sh "curl -Lo /usr/local/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.15.3/bin/linux/amd64/kubectl"
               sh "chmod +x /usr/local/bin/kubectl"
+              def deployns = "workload-cluster"
               def kubectl = "kubectl  --kubeconfig=\$KUBECONFIG"
               def namespace = sh (
-                  script: 'kubectl  --kubeconfig=\$KUBECONFIG get ns | grep hello-world | awk \'{print $1}\'',
+                  script: 'kubectl  --kubeconfig=\$KUBECONFIG get ns | grep ${deployns} | awk \'{print $1}\'',
                   returnStdout: true
               )
               sh "echo ${namespace}"
               sh "${kubectl} get ns"
               if (namespace == "") {
-                 sh "${kubectl} create ns hello-world"
+                sh "${kubectl} create ns ${deployns}"
               }
-              sh "${kubectl} apply -f ./ -n hello-world"
+              sh "${kubectl} apply -f ./ -n ${deployns}"
               sh "sleep 5"
-              sh "${kubectl} get svc -n hello-world -o yaml"
+              sh "${kubectl} get svc -n ${deployns} -o yaml"
              }
             }
           }
