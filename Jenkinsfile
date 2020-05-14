@@ -52,7 +52,7 @@ spec:
               def deployns = "workload-cluster"
               def kubectl = "kubectl  --kubeconfig=\$KUBECONFIG"
               def namespace = sh (
-                  script: 'kubectl  --kubeconfig=\$KUBECONFIG get ns | grep ${deployns} | awk \'{print $1}\'',
+                  script: 'kubectl  --kubeconfig=\$KUBECONFIG get ns | grep \$deployns | awk \'{print $1}\'',
                   returnStdout: true
               )
               sh "echo ${namespace}"
