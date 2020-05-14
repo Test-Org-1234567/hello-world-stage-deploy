@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: hello-world-app
-          image: hardy047/hello-world-app:0.0.1
+          image: hardy047/hello-world-app:0.0.4
           ports:
             - containerPort: 9090
