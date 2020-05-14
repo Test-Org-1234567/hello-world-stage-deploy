@@ -16,13 +16,13 @@ spec:
     tty: true
     env:
     - name: HTTPS_PROXY
-      value: http://172.18.192.4:8080
+      value: http://proxy.ftc5.hpelabs.net:8080
     - name: https_proxy
-      value: http://172.18.192.4:8080
+      value: http://proxy.ftc5.hpelabs.net:8080
     - name: NO_PROXY
-      value: localhost,127.0.0.1,gw-bluedata.ncs.com
+      value: localhost,127.0.0.1,trial1-glhc-cp-gw-0.glhc-hpe.local
     - name: no_proxy
-      value: localhost,127.0.0.1,gw-bluedata.ncs.com
+      value: localhost,127.0.0.1,trial1-glhc-cp-gw-0.glhc-hpe.local
 """
   ) {
     node(label) {
