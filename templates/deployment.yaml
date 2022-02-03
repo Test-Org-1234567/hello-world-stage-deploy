@@ -6,7 +6,7 @@ metadata:
   labels:
     app: hello-world-app
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: hello-world-app
@@ -17,7 +17,10 @@ spec:
     spec:
       containers:
         - name: hello-world-app
-          image: hardy047/hello-world-app:0.0.17
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
           imagePullPolicy: Always
           ports:
             - containerPort: 9090
+      imagePullSecrets:
+        - name: {{ .Values.imagePullSecrets }}
+
