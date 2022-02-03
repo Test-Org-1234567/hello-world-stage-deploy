@@ -1,5 +1,5 @@
 image:
   repository: harbor.ci-stack.caas/demo/hello-world-app
-  tag: 0.0.22
+  tag: 0.0.23
 imagePullSecrets: harbor-docker-regcred
 
